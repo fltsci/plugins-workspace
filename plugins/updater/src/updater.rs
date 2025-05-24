@@ -506,14 +506,14 @@ impl Updater {
 }
 
 #[derive(Clone)]
-#[cfg_attr(feature = "specta", derive(specta::Type))]
+#[cfg_attr(feature = "specta", derive(specta::Type, Serialize))]
 pub struct Update {
     #[allow(dead_code)]
-    #[cfg_attr(feature = "specta", specta(skip))]
+    #[cfg_attr(feature = "specta", serde(skip))]
     run_on_main_thread: Arc<RunOnMainThread>,
     config: Config,
     #[allow(unused)]
-    #[cfg_attr(feature = "specta", specta(type = Option<()>))]
+    #[cfg_attr(feature = "specta", serde(skip))]
     on_before_exit: Option<OnBeforeExit>,
     /// Update description
     pub body: Option<String>,
@@ -522,6 +522,7 @@ pub struct Update {
     /// Version announced
     pub version: String,
     /// Update publish date
+    #[cfg_attr(feature = "specta", serde(skip))]
     pub date: Option<OffsetDateTime>,
     /// Target
     pub target: String,
@@ -538,7 +539,7 @@ pub struct Update {
     #[cfg_attr(feature = "specta", specta(type = Option<String>))]
     pub proxy: Option<Url>,
     /// Request headers
-    #[cfg_attr(feature = "specta", specta(type = HashMap<String, String>))]
+    #[cfg_attr(feature = "specta", serde(skip))]
     pub headers: HeaderMap,
     /// Extract path
     #[allow(unused)]
@@ -550,8 +551,58 @@ pub struct Update {
     installer_args: Vec<OsString>,
     #[allow(unused)]
     current_exe_args: Vec<OsString>,
-    #[cfg_attr(feature = "specta", specta(skip))]
+    #[cfg_attr(feature = "specta", serde(skip))]
     configure_client: Option<OnBeforeRequest>,
+}
+
+impl<'de> Deserialize<'de> for Update {
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        #[derive(Deserialize)]
+        struct InnerUpdate {
+            config: Config,
+            pub body: Option<String>,
+            pub current_version: String,
+            pub version: String,
+            pub date: Option<OffsetDateTime>,
+            pub target: String,
+            pub download_url: Url,
+            pub signature: String,
+            pub raw_json: serde_json::Value,
+            pub timeout: Option<Duration>,
+            pub proxy: Option<Url>,
+            extract_path: PathBuf,
+            app_name: String,
+            installer_args: Vec<OsString>,
+            current_exe_args: Vec<OsString>,
+        }
+
+        let update = InnerUpdate::deserialize(deserializer)?;
+
+        Ok(Update {
+            run_on_main_thread: Arc::new(Box::new(|_| Ok(()))),
+            config: update.config,
+            on_before_exit: None,
+            body: update.body,
+            current_version: update.current_version,
+            version: update.version,
+            date: update.date,
+            target: update.target,
+            download_url: update.download_url,
+            signature: update.signature,
+            raw_json: update.raw_json,
+            timeout: update.timeout,
+            proxy: update.proxy,
+            headers: HeaderMap::new(),
+            extract_path: update.extract_path,
+            app_name: update.app_name,
+            installer_args: update.installer_args,
+            current_exe_args: update.current_exe_args,
+            configure_client: None,
+        })
+    }
 }
 
 impl Resource for Update {}
