@@ -105,6 +105,7 @@ type RunOnMainThread =
 #[cfg_attr(feature = "specta", derive(specta::Type))]
 pub struct UpdaterBuilder {
     #[allow(dead_code)]
+    #[cfg_attr(feature = "specta", specta(skip))]
     run_on_main_thread: RunOnMainThread,
     app_name: String,
     #[cfg_attr(feature = "specta", specta(type = String))]
@@ -125,6 +126,7 @@ pub struct UpdaterBuilder {
     current_exe_args: Vec<OsString>,
     #[cfg_attr(feature = "specta", specta(type = Option<()>))]
     on_before_exit: Option<OnBeforeExit>,
+    #[cfg_attr(feature = "specta", specta(skip))]
     configure_client: Option<OnBeforeRequest>,
 }
 
@@ -507,6 +509,7 @@ impl Updater {
 #[cfg_attr(feature = "specta", derive(specta::Type))]
 pub struct Update {
     #[allow(dead_code)]
+    #[cfg_attr(feature = "specta", specta(skip))]
     run_on_main_thread: Arc<RunOnMainThread>,
     config: Config,
     #[allow(unused)]
@@ -547,6 +550,7 @@ pub struct Update {
     installer_args: Vec<OsString>,
     #[allow(unused)]
     current_exe_args: Vec<OsString>,
+    #[cfg_attr(feature = "specta", specta(skip))]
     configure_client: Option<OnBeforeRequest>,
 }
 

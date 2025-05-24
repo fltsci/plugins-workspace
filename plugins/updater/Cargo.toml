@@ -47,8 +47,7 @@ tempfile = "3"
 infer = "0.19"
 percent-encoding = "2.3"
 specta = { workspace = true, optional = true, features = ["derive"] }
-specta-macros = { workspace = true, optional = true }
-specta-util = { workspace = true, optional = true, features = ["export"] }
+
 
 [target."cfg(target_os = \"windows\")".dependencies]
 zip = { version = "2", default-features = false, optional = true }
@@ -74,4 +73,4 @@ zip = ["dep:zip", "dep:tar", "dep:flate2"]
 native-tls = ["reqwest/native-tls"]
 native-tls-vendored = ["reqwest/native-tls-vendored"]
 rustls-tls = ["reqwest/rustls-tls"]
-specta = ["dep:specta", "dep:specta-macros", "dep:specta-util"]
+specta = ["dep:specta"]
