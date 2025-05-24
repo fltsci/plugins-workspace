@@ -1,5 +1,18 @@
 # Changelog
 
+## \[2.2.6]
+
+- [`1a984659`](https://github.com/tauri-apps/plugins-workspace/commit/1a9846599b6a71faf330845847a30f6bf9735898) ([#2469](https://github.com/tauri-apps/plugins-workspace/pull/2469) by [@FabianLars](https://github.com/tauri-apps/plugins-workspace/../../FabianLars)) Update `objc2` crate to 0.6. No user facing changes.
+- [`71f95c9f`](https://github.com/tauri-apps/plugins-workspace/commit/71f95c9f05b29cf1be586849614c0b007757c15d) ([#2445](https://github.com/tauri-apps/plugins-workspace/pull/2445) by [@renovate](https://github.com/tauri-apps/plugins-workspace/../../renovate)) Updated `windows` crate to 0.60 to match Tauri 2.3.0. No user facing changes.
+
+## \[2.2.5]
+
+- [`5b821181`](https://github.com/tauri-apps/plugins-workspace/commit/5b8211815825ddae2dcc0c00520e0cfdff002763) ([#2332](https://github.com/tauri-apps/plugins-workspace/pull/2332) by [@betamos](https://github.com/tauri-apps/plugins-workspace/../../betamos)) Fix broken JS commands `opener.openPath` and `opener.openUrl` on mobile.
+
+## \[2.2.4]
+
+- [`da5c59e2`](https://github.com/tauri-apps/plugins-workspace/commit/da5c59e2fe879d177e3cfd52fcacce85440423cb) ([#2271](https://github.com/tauri-apps/plugins-workspace/pull/2271) by [@renovate](https://github.com/tauri-apps/plugins-workspace/../../renovate)) Updated `zbus` dependency to version 5. No API changes.
+
 ## \[2.2.3]
 
 - [`a9ac1e3c`](https://github.com/tauri-apps/plugins-workspace/commit/a9ac1e3c939cec4338a9422ef02323c1d4dde6cd) ([#2253](https://github.com/tauri-apps/plugins-workspace/pull/2253) by [@betamos](https://github.com/tauri-apps/plugins-workspace/../../betamos)) Return an error in `open_path` if the file does not exist when opening with default application.

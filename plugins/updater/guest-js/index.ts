@@ -38,11 +38,11 @@ interface DownloadOptions {
 
 interface UpdateMetadata {
   rid: number
-  available: boolean
   currentVersion: string
   version: string
   date?: string
   body?: string
+  rawJson: Record<string, unknown>
 }
 
 /** Updater download event */
@@ -52,20 +52,24 @@ type DownloadEvent =
   | { event: 'Finished' }
 
 class Update extends Resource {
+  // TODO: remove this field in v3
+  /** @deprecated This is always true, check if the return value is `null` instead when using {@linkcode check} */
   available: boolean
   currentVersion: string
   version: string
   date?: string
   body?: string
+  rawJson: Record<string, unknown>
   private downloadedBytes?: Resource
 
   constructor(metadata: UpdateMetadata) {
     super(metadata.rid)
-    this.available = metadata.available
+    this.available = true
     this.currentVersion = metadata.currentVersion
     this.version = metadata.version
     this.date = metadata.date
     this.body = metadata.body
+    this.rawJson = metadata.rawJson
   }
 
   /** Download the updater package */
@@ -128,9 +132,10 @@ async function check(options?: CheckOptions): Promise<Update | null> {
     options.headers = Array.from(new Headers(options.headers).entries())
   }
 
-  return await invoke<UpdateMetadata>('plugin:updater|check', {
+  const metadata = await invoke<UpdateMetadata | null>('plugin:updater|check', {
     ...options
-  }).then((meta) => (meta.available ? new Update(meta) : null))
+  })
+  return metadata ? new Update(metadata) : null
 }
 
 export type { CheckOptions, DownloadOptions, DownloadEvent }
