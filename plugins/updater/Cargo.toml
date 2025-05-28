@@ -26,6 +26,7 @@ ios = { level = "none", notes = "" }
 tauri-plugin = { workspace = true, features = ["build"] }
 
 [dependencies]
+specta-serde = { version = "0.0.9", optional = true }
 tauri = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
@@ -50,7 +51,14 @@ futures-util = "0.3"
 tempfile = "3"
 infer = "0.19"
 percent-encoding = "2.3"
-specta = { workspace = true, optional = true, features = ["derive"] }
+specta = { workspace = true, optional = true, features = [
+  "derive",
+  "function",
+  "serde",
+  "serde_json",
+  "url",
+] }
+specta-typescript = "0.0.9"
 
 
 [target."cfg(target_os = \"windows\")".dependencies]
@@ -77,4 +85,4 @@ zip = ["dep:zip", "dep:tar", "dep:flate2"]
 native-tls = ["reqwest/native-tls"]
 native-tls-vendored = ["reqwest/native-tls-vendored"]
 rustls-tls = ["reqwest/rustls-tls"]
-specta = ["dep:specta"]
+specta = ["dep:specta", "dep:specta-serde"]
