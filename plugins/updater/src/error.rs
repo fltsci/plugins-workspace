@@ -65,6 +65,7 @@ pub enum Error {
     #[cfg(all(target_os = "windows", feature = "zip"))]
     /// `zip` errors.
     #[error(transparent)]
+    #[cfg_attr(feature = "specta", specta(skip))]
     Extract(#[from] zip::result::ZipError),
     /// Temp dir is not on same mount mount. This prevents our updater to rename the AppImage to a temp file.
     #[error("temp directory is not on the same mount point as the AppImage")]
