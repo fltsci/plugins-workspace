@@ -207,7 +207,7 @@ checksum = "e16d2d3311acee920a9eb8d33b8cbc1787ce4a264e85f964c2404b969bdcd487"
 
 [[package]]
 name = "api"
-version = "2.0.26"
+version = "2.0.29"
 dependencies = [
  "log",
  "serde",
@@ -1539,7 +1539,7 @@ dependencies = [
  "libc",
  "option-ext",
  "redox_users 0.5.0",
- "windows-sys 0.59.0",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -6509,7 +6509,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-autostart"
-version = "2.3.0"
+version = "2.4.0"
 dependencies = [
  "auto-launch",
  "serde",
@@ -6521,7 +6521,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-barcode-scanner"
-version = "2.2.0"
+version = "2.2.1"
 dependencies = [
  "log",
  "serde",
@@ -6533,7 +6533,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-biometric"
-version = "2.2.1"
+version = "2.2.2"
 dependencies = [
  "log",
  "serde",
@@ -6546,7 +6546,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-cli"
-version = "2.2.0"
+version = "2.3.0"
 dependencies = [
  "clap",
  "log",
@@ -6559,7 +6559,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-clipboard-manager"
-version = "2.2.2"
+version = "2.2.3"
 dependencies = [
  "arboard",
  "log",
@@ -6628,7 +6628,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-geolocation"
-version = "2.2.4"
+version = "2.2.5"
 dependencies = [
  "log",
  "serde",
@@ -6654,7 +6654,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-haptics"
-version = "2.2.4"
+version = "2.2.5"
 dependencies = [
  "log",
  "serde",
@@ -6690,7 +6690,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-localhost"
-version = "2.2.0"
+version = "2.2.1"
 dependencies = [
  "http",
  "log",
@@ -6703,7 +6703,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-log"
-version = "2.4.0"
+version = "2.5.1"
 dependencies = [
  "android_logger",
  "byte-unit",
@@ -6724,7 +6724,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-nfc"
-version = "2.2.0"
+version = "2.2.1"
 dependencies = [
  "log",
  "serde",
@@ -6737,7 +6737,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-notification"
-version = "2.2.2"
+version = "2.2.3"
 dependencies = [
  "color-backtrace",
  "ctor",
@@ -6759,7 +6759,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-opener"
-version = "2.2.7"
+version = "2.3.1"
 dependencies = [
  "dunce",
  "glob",
@@ -6779,7 +6779,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-os"
-version = "2.2.1"
+version = "2.2.2"
 dependencies = [
  "gethostname 1.0.1",
  "log",
@@ -6809,7 +6809,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-positioner"
-version = "2.2.0"
+version = "2.2.1"
 dependencies = [
  "log",
  "serde",
@@ -6822,7 +6822,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-process"
-version = "2.2.1"
+version = "2.2.2"
 dependencies = [
  "tauri",
  "tauri-plugin",
@@ -6830,7 +6830,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-shell"
-version = "2.2.1"
+version = "2.2.2"
 dependencies = [
  "encoding_rs",
  "log",
@@ -6858,13 +6858,13 @@ dependencies = [
  "tauri-plugin-deep-link",
  "thiserror 2.0.12",
  "tracing",
- "windows-sys 0.59.0",
+ "windows-sys 0.60.2",
  "zbus",
 ]
 
 [[package]]
 name = "tauri-plugin-sql"
-version = "2.2.0"
+version = "2.2.1"
 dependencies = [
  "futures-core",
  "indexmap 2.9.0",
@@ -6881,7 +6881,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-store"
-version = "2.2.0"
+version = "2.2.1"
 dependencies = [
  "dunce",
  "serde",
@@ -6895,7 +6895,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-stronghold"
-version = "2.2.0"
+version = "2.2.1"
 dependencies = [
  "hex",
  "iota-crypto",
@@ -6916,7 +6916,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-updater"
-version = "2.7.1"
+version = "2.8.1"
 dependencies = [
  "base64 0.22.1",
  "dirs 6.0.0",
@@ -6943,13 +6943,13 @@ dependencies = [
  "time",
  "tokio",
  "url",
- "windows-sys 0.59.0",
+ "windows-sys 0.60.2",
  "zip 4.0.0",
 ]
 
 [[package]]
 name = "tauri-plugin-upload"
-version = "2.2.1"
+version = "2.2.2"
 dependencies = [
  "futures-util",
  "log",
@@ -6967,7 +6967,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-websocket"
-version = "2.3.0"
+version = "2.3.1"
 dependencies = [
  "futures-util",
  "http",
@@ -6984,7 +6984,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-window-state"
-version = "2.2.2"
+version = "2.2.3"
 dependencies = [
  "bitflags 2.9.0",
  "log",
@@ -8323,7 +8323,7 @@ checksum = "4286ad90ddb45071efd1a66dfa43eb02dd0dfbae1545ad6cc3c51cf34d7e8ba3"
 dependencies = [
  "windows-result",
  "windows-strings 0.3.1",
- "windows-targets 0.53.0",
+ "windows-targets 0.53.2",
 ]
 
 [[package]]
@@ -8401,6 +8401,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "windows-sys"
+version = "0.60.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f2f500e4d28234f72040990ec9d39e3a6b950f9f22d3dba18416c35882612bcb"
+dependencies = [
+ "windows-targets 0.53.2",
+]
+
+[[package]]
 name = "windows-targets"
 version = "0.42.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -8448,9 +8457,9 @@ dependencies = [
 
 [[package]]
 name = "windows-targets"
-version = "0.53.0"
+version = "0.53.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b1e4c7e8ceaaf9cb7d7507c974735728ab453b67ef8f18febdd7c11fe59dca8b"
+checksum = "c66f69fcc9ce11da9966ddb31a40968cad001c5bedeb5c2b82ede4253ab48aef"
 dependencies = [
  "windows_aarch64_gnullvm 0.53.0",
  "windows_aarch64_msvc 0.53.0",
