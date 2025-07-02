@@ -24,6 +24,8 @@ mod models;
 pub mod ext;
 pub mod stronghold;
 
+pub use ext::StrongholdExt;
+
 use commands::*;
 use models::*;
 
