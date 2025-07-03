@@ -10,7 +10,7 @@ use zeroize::{Zeroize, Zeroizing};
 
 use crate::{models::PasswordHashFunction, StrongholdCollection};
 
-pub(crate) async fn initialize(
+pub(crate) fn initialize(
     collection: State<'_, StrongholdCollection>,
     hash_function: State<'_, PasswordHashFunction>,
     snapshot_path: PathBuf,
@@ -29,7 +29,7 @@ pub(crate) async fn initialize(
     Ok(())
 }
 
-pub(crate) async fn destroy(
+pub(crate) fn destroy(
     collection: State<'_, StrongholdCollection>,
     snapshot_path: PathBuf,
 ) -> Result<()> {
@@ -43,7 +43,7 @@ pub(crate) async fn destroy(
     Ok(())
 }
 
-pub(crate) async fn save(
+pub(crate) fn save(
     collection: State<'_, StrongholdCollection>,
     snapshot_path: PathBuf,
 ) -> Result<()> {
@@ -54,7 +54,7 @@ pub(crate) async fn save(
     Ok(())
 }
 
-pub(crate) async fn create_client(
+pub(crate) fn create_client(
     collection: State<'_, StrongholdCollection>,
     snapshot_path: PathBuf,
     client: BytesDto,
@@ -64,7 +64,7 @@ pub(crate) async fn create_client(
     Ok(())
 }
 
-pub(crate) async fn load_client(
+pub(crate) fn load_client(
     collection: State<'_, StrongholdCollection>,
     snapshot_path: PathBuf,
     client: BytesDto,
@@ -74,7 +74,7 @@ pub(crate) async fn load_client(
     Ok(())
 }
 
-pub(crate) async fn get_store_record(
+pub(crate) fn get_store_record(
     collection: State<'_, StrongholdCollection>,
     snapshot_path: PathBuf,
     client: BytesDto,
@@ -84,7 +84,7 @@ pub(crate) async fn get_store_record(
     client.store().get(key.as_ref()).map_err(Into::into)
 }
 
-pub(crate) async fn save_store_record(
+pub(crate) fn save_store_record(
     collection: State<'_, StrongholdCollection>,
     snapshot_path: PathBuf,
     client: BytesDto,
@@ -99,7 +99,7 @@ pub(crate) async fn save_store_record(
         .map_err(Into::into)
 }
 
-pub(crate) async fn remove_store_record(
+pub(crate) fn remove_store_record(
     collection: State<'_, StrongholdCollection>,
     snapshot_path: PathBuf,
     client: BytesDto,
@@ -109,7 +109,7 @@ pub(crate) async fn remove_store_record(
     client.store().delete(key.as_ref()).map_err(Into::into)
 }
 
-pub(crate) async fn save_secret(
+pub(crate) fn save_secret(
     collection: State<'_, StrongholdCollection>,
     snapshot_path: PathBuf,
     client: BytesDto,
@@ -127,7 +127,7 @@ pub(crate) async fn save_secret(
         .map_err(Into::into)
 }
 
-pub(crate) async fn remove_secret(
+pub(crate) fn remove_secret(
     collection: State<'_, StrongholdCollection>,
     snapshot_path: PathBuf,
     client: BytesDto,
@@ -142,7 +142,7 @@ pub(crate) async fn remove_secret(
         .map_err(Into::into)
 }
 
-pub(crate) async fn execute_procedure(
+pub(crate) fn execute_procedure(
     collection: State<'_, StrongholdCollection>,
     snapshot_path: PathBuf,
     client: BytesDto,

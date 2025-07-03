@@ -19,7 +19,7 @@ pub mod kdf;
 
 mod commands;
 mod fns;
-mod models;
+pub mod models;
 
 pub mod ext;
 pub mod stronghold;
@@ -78,6 +78,8 @@ impl Builder {
                 }
                 PasswordHashFunctionKind::Custom(f) => f,
             }));
+            let app_stronghold = ext::init(app)?;
+            app.manage(app_stronghold);
             Ok(())
         });
 

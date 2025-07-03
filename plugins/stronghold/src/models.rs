@@ -24,7 +24,7 @@ pub(crate) struct StrongholdCollection(pub(crate) Arc<Mutex<HashMap<PathBuf, Str
 
 pub(crate) struct PasswordHashFunction(pub(crate) Box<PasswordHashFn>);
 
-#[derive(Deserialize, Hash, Eq, PartialEq, Ord, PartialOrd)]
+#[derive(Deserialize, Clone, Hash, Eq, PartialEq, Ord, PartialOrd)]
 #[serde(untagged)]
 pub enum BytesDto {
     Text(String),
