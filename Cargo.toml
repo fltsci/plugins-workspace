@@ -24,7 +24,7 @@ dunce = "1"
 specta = { version = "=2.0.0-rc.22", features = ["derive"] }
 specta-util = { version = "0.0.9", features = ["export"] }
 glob = "0.3"
-zbus = "5"
+zbus = "5.9"
 
 [workspace.package]
 edition = "2021"
