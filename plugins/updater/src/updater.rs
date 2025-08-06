@@ -555,6 +555,24 @@ pub struct Update {
     configure_client: Option<OnBeforeRequest>,
 }
 
+impl std::fmt::Debug for Update {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "Update {{")?;
+        write!(f, "config: {:?}", self.config)?;
+        write!(f, "body: {:?}", self.body)?;
+        write!(f, "current_version: {:?}", self.current_version)?;
+        write!(f, "version: {:?}", self.version)?;
+        write!(f, "date: {:?}", self.date)?;
+        write!(f, "target: {:?}", self.target)?;
+        write!(f, "download_url: {:?}", self.download_url)?;
+        write!(f, "extract_path: {:?}", self.extract_path)?;
+        write!(f, "installer_args: {:?}", self.installer_args)?;
+        write!(f, "app_name: {:?}", self.app_name)?;
+        write!(f, "current_exe_args: {:?}", self.current_exe_args)?;
+        write!(f, "}}")
+    }
+}
+
 impl<'de> Deserialize<'de> for Update {
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
