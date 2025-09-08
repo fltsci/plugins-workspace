@@ -1,5 +1,18 @@
 # Changelog
 
+## \[2.0.32]
+
+### Dependencies
+
+- Upgraded to `dialog-js@2.4.0`
+- Upgraded to `log-js@2.7.0`
+
+## \[2.0.31]
+
+### Dependencies
+
+- Upgraded to `shell-js@2.3.1`
+
 ## \[2.0.30]
 
 ### Dependencies

@@ -207,7 +207,7 @@ checksum = "e16d2d3311acee920a9eb8d33b8cbc1787ce4a264e85f964c2404b969bdcd487"
 
 [[package]]
 name = "api"
-version = "2.0.34"
+version = "2.0.36"
 dependencies = [
  "log",
  "serde",
@@ -6359,9 +6359,9 @@ checksum = "61c41af27dd6d1e27b1b16b489db798443478cef1f06a660c96db617ba5de3b1"
 
 [[package]]
 name = "tauri"
-version = "2.8.2"
+version = "2.8.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a54629607ea3084a8b455c1ebe888cbdfc4de02fa5edb2e40db0dc97091007e3"
+checksum = "5d545ccf7b60dcd44e07c6fb5aeb09140966f0aabd5d2aa14a6821df7bc99348"
 dependencies = [
  "anyhow",
  "bytes",
@@ -6559,7 +6559,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-deep-link"
-version = "2.4.2"
+version = "2.4.3"
 dependencies = [
  "dunce",
  "plist",
@@ -6578,7 +6578,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-dialog"
-version = "2.3.3"
+version = "2.4.0"
 dependencies = [
  "log",
  "raw-window-handle",
@@ -6691,7 +6691,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-log"
-version = "2.6.0"
+version = "2.7.0"
 dependencies = [
  "android_logger",
  "byte-unit",
@@ -6818,7 +6818,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-shell"
-version = "2.3.0"
+version = "2.3.1"
 dependencies = [
  "encoding_rs",
  "log",
@@ -6837,7 +6837,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-single-instance"
-version = "2.3.3"
+version = "2.3.4"
 dependencies = [
  "semver",
  "serde",
@@ -7007,9 +7007,9 @@ dependencies = [
 
 [[package]]
 name = "tauri-runtime-wry"
-version = "2.8.0"
+version = "2.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5bb0f10f831f75832ac74d14d98f701868f9a8adccef2c249b466cf70b607db9"
+checksum = "c1fe9d48bd122ff002064e88cfcd7027090d789c4302714e68fcccba0f4b7807"
 dependencies = [
  "gtk",
  "http",
@@ -8789,9 +8789,9 @@ checksum = "1e9df38ee2d2c3c5948ea468a8406ff0db0b29ae1ffde1bcf20ef305bcc95c51"
 
 [[package]]
 name = "wry"
-version = "0.53.1"
+version = "0.53.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5698e50a589268aec06d2219f48b143222f7b5ad9aa690118b8dce0a8dcac574"
+checksum = "e3b6763512fe4b51c80b3ce9b50939d682acb4de335dfabbdb20d7a2642199b7"
 dependencies = [
  "base64 0.22.1",
  "block2 0.6.0",
