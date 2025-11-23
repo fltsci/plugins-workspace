@@ -11,6 +11,7 @@ use url::Url;
 #[derive(Debug, PartialEq, Eq, Clone, Deserialize)]
 #[cfg_attr(feature = "specta", derive(specta::Type, serde::Serialize))]
 #[serde(rename_all = "camelCase")]
+#[derive(Default)]
 pub enum WindowsUpdateInstallMode {
     /// Specifies there's a basic UI during the installation process, including a final dialog box at the end.
     BasicUi,
@@ -18,6 +19,7 @@ pub enum WindowsUpdateInstallMode {
     /// Requires admin privileges if the installer does.
     Quiet,
     /// Specifies unattended mode, which means the installation only shows a progress bar.
+    #[default]
     Passive,
 }
 
@@ -55,12 +57,6 @@ impl Display for WindowsUpdateInstallMode {
                 Self::Passive => "passive",
             }
         )
-    }
-}
-
-impl Default for WindowsUpdateInstallMode {
-    fn default() -> Self {
-        Self::Passive
     }
 }
 
